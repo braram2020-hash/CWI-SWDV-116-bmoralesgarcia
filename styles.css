@@ -1,18 +1,136 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #ededed;
+    color: #333;
 }
 
-nav a {
-    color:rgba(0, 0, 0, 0.7);
+
+.hero {
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('hero_1.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    color: white;
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 2rem 3rem;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem; 
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 a {
+    color: white;
     text-decoration: none;
+    font-size: 2.8rem;
+    font-weight: bold;
 }
 
-nav a:hover {
-    color: cadetblue;
+.hero nav {
+    display: flex;
+    gap: 2.5rem; 
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 500;
+}
+
+.hero nav a:hover {
     text-decoration: underline;
 }
 
-main p {
+.featured-cars {
+    max-width: 1200px;
+    margin: 5rem auto;
+    padding: 0 1rem;
+}
+
+.featured-cars h2 {
+    margin-bottom: 2rem;
     font-size: 2rem;
-    font-weight: bold;
+    color: #000;
+}
+
+.car-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.car-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 270px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.car-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+}
+
+.car-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #111;
+}
+
+.car-card p {
+    font-size: 0.9rem;
+    color: #555;
+    line-height: 1.3;
+}
+
+footer {
+    text-align: center;
+    padding: 3rem;
+    color: #666;
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        height: 100vh;
+        padding: 1.5rem 1rem;
+    }
+
+    .hero h1 a {
+        font-size: 2rem;
+    }
+
+    .hero nav {
+        gap: 1.2rem;
+    }
+
+    .car-card {
+        width: 100%;
+        max-width: 400px;
+    }
 }
