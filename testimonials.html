@@ -3,27 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Brandon's Car Rentals Testimonials">
-    <meta name="author" content="Brandon Ramiro Morales Garcia">
-    <link rel="icon" href="https://zany.sh/favicon.svg?text=BM">
-    <link rel="stylesheet" href="styles.css">
-    <title>Brandon's Car Rentals Testimonials</title>
+    <title>Morale's Rental Cars - Testimonials</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1><a href="index.html">Brandon's Car Rentals</a></h1>
+
+    <header class="hero" style="height: 50vh; min-height: 300px;">
+        <div class="hero-content">
+            <h1><a href="index.html">Morale's Rental Cars</a></h1>
+            
+           
+            <nav class="navbar">
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </label>
+
+                <ul class="nav-links">
+                    <li><a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="cars.html"><i class="fa fa-car" aria-hidden="true"></i> Fleet</a></li>
+                    <li><a href="about.html"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <nav>
-        <a href="cars.html">Cars</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-    <main>
-        <p>Customer Reviews</p>
+
+    <main class="featured-cars">
+        <h2>Customer Testimonials</h2>
+        <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1rem;">
+            <div style="background: white; padding: 1.5rem; border-radius: 6px; border: 1px solid #ddd;">
+                <p style="font-style: italic; color: #444;">"The BMW M4 rental made our weekend getaway unforgettable. Clean car, smooth pickup process, and excellent communication!"</p>
+                <p style="margin-top: 0.5rem; font-weight: bold; color: #222;">— Marcus L.</p>
+            </div>
+            <div style="background: white; padding: 1.5rem; border-radius: 6px; border: 1px solid #ddd;">
+                <p style="font-style: italic; color: #444;">"Rented the Volvo XC90 for a family trip. Super comfortable and spacious. Highly recommend Rental Cars!"</p>
+                <p style="margin-top: 0.5rem; font-weight: bold; color: #222;">— Sarah T.</p>
+            </div>
+        </div>
     </main>
+
     <footer>
-        <p>&copy; 2026</p>
+        <p>&copy; 2026 Rental Cars. All rights reserved.</p>
     </footer>
+
 </body>
 </html>

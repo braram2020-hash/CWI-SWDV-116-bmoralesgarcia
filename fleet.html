@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morale's Rental Cars - Fleet</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="hero" style="height: 50vh; min-height: 300px;">
+        <div class="hero-content">
+            <h1><a href="/index.html" style="color: inherit; text-decoration: none;">Morale's Rental Cars</a></h1>
+            
+           
+            <nav class="navbar">
+                <input type="checkbox" id="nav-toggle" class="nav-toggle">
+                
+                <label for="nav-toggle" class="nav-toggle-label">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </label>
+
+                <ul class="nav-links">
+                    <li><a href="/index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a></li>
+                    <li><a href="/cars.html"><i class="fa fa-car" aria-hidden="true"></i> Fleet</a></li>
+                    <li><a href="/about.html"><i class="fa fa-info-circle" aria-hidden="true"></i> About</a></li>
+                    <li><a href="/contact.html"><i class="fa fa-envelope" aria-hidden="true"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="featured-cars" style="padding: 2rem 5%;">
+        <h2>Our Complete Fleet</h2>
+        <p style="font-size: 1.1rem; color: #555; margin-bottom: 2rem;">Explore our high-performance sedans, luxury SUVs, and reliable everyday vehicles.</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <picture>
+                    <source srcset="car_1-480w.webp" type="image/webp">
+                    <img src="car_1.jpg" alt="Car 1" style="width: 100%; height: 200px; object-fit: cover;">
+                </picture>
+                <div style="padding: 1.5rem;">
+                    <h3 style="margin-bottom: 0.5rem; color: #222;">Luxury Sedan</h3>
+                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 1rem;">Experience top-tier comfort and modern tech.</p>
+                    <a href="/contact.html" style="background: #333; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; display: inline-block;">Book Now</a>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <picture>
+                    <source srcset="car_2-480w.webp" type="image/webp">
+                    <img src="car_2.jpg" alt="Car 2" style="width: 100%; height: 200px; object-fit: cover;">
+                </picture>
+                <div style="padding: 1.5rem;">
+                    <h3 style="margin-bottom: 0.5rem; color: #222;">Sport Performance</h3>
+                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 1rem;">Unmatched speed and aggressive styling.</p>
+                    <a href="/contact.html" style="background: #333; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; display: inline-block;">Book Now</a>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                <picture>
+                    <source srcset="car_3-480w.webp" type="image/webp">
+                    <img src="car_3.jpg" alt="Car 3" style="width: 100%; height: 200px; object-fit: cover;">
+                </picture>
+                <div style="padding: 1.5rem;">
+                    <h3 style="margin-bottom: 0.5rem; color: #222;">Family SUV</h3>
+                    <p style="color: #666; font-size: 0.95rem; margin-bottom: 1rem;">Spacious interior and top safety ratings.</p>
+                    <a href="/contact.html" style="background: #333; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; display: inline-block;">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 2rem; background: #222; color: white; margin-top: 3rem;">
+        <p>&copy; 2026 Rental Cars. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
