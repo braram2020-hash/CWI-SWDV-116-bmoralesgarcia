@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SWDV-116 Lab 9">
     <title>Morale's Rental Cars - Home</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -14,7 +15,6 @@
         <div class="hero-content">
             <h1><a href="index.html">Morale's Rental Cars</a></h1>
             
-           
             <nav class="navbar">
                 <input type="checkbox" id="nav-toggle" class="nav-toggle">
                 
@@ -33,6 +33,25 @@
     </header>
 
     <main class="featured-cars">
+        <!-- Sección Multimedia del Lab 9 -->
+        <section class="media-container" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center;">
+            <div style="position: relative; width: 100%; max-width: 800px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
+                
+                <!-- Video principal que controla toda la multimedia -->
+                <video id="promo-video" autoplay muted controls style="width: 100%; display: block;">
+                    <source src="DrivingVideo.mp4" type="video/mp4">
+                    <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Archivo de música oculto que se sincroniza automáticamente con los controles del video -->
+                <audio id="promo-audio" preload="auto">
+                    <source src="DrivingMusic.mp4" type="audio/mp4">
+                </audio>
+
+            </div>
+        </section>
+
         <h2>Featured Cars</h2>
         <div class="car-grid">
             <article class="car-card">
@@ -64,7 +83,7 @@
                     <source type="image/webp" srcset="car_4-480w.webp 480w" sizes="(max-width: 768px) 100vw, 768px">
                     <img src="car_4.jpg" alt="Car 4">
                 </picture>
-                <h3>Car Model 4</h3>
+                <h3>Car Model Car 4</h3>
                 <p>Volvo XC90. Comfy car for family.</p>
             </article>
             <article class="car-card">
@@ -97,6 +116,32 @@
     <footer>
         <p>&copy; 2026 Rental Cars. All rights reserved.</p>
     </footer>
+
+    <!-- Script para sincronizar perfectamente el video y la música a 10 segundos -->
+    <script>
+        const video = document.getElementById('promo-video');
+        const audio = document.getElementById('promo-audio');
+
+        // Reproducir audio cuando el video empieza
+        video.addEventListener('play', function() {
+            audio.play();
+        });
+
+        // Pausar audio cuando el video se pausa
+        video.addEventListener('pause', function() {
+            audio.pause();
+        });
+
+        // Sincronizar bucle y corte de 10 segundos exactos
+        video.addEventListener('timeupdate', function() {
+            if (video.currentTime >= 10) {
+                video.currentTime = 0;
+                audio.currentTime = 0;
+                video.play();
+                audio.play();
+            }
+        });
+    </script>
 
 </body>
 </html>
