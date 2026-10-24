@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SWDV-116 Lab 9">
+    <meta name="description" content="SWDV-116 Lab 10">
     <title>Morale's Rental Cars - Home</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,10 +12,40 @@
 <body>
 
     <header class="hero">
-        <div class="hero-content">
+        <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; height: 100%; min-height: 350px;">
             <h1><a href="index.html">Morale's Rental Cars</a></h1>
             
-            <nav class="navbar">
+            <!-- Formulario del Lab 10 con "Rent A Car Today" arriba -->
+            <div style="background: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 8px; margin-top: 15px; width: 100%; max-width: 400px;">
+                <h3 style="color: white; margin-bottom: 15px;">Rent A Car Today</h3>
+                <form action="cars.html" method="GET" style="display: flex; flex-direction: column; gap: 12px; text-align: left;">
+                    
+                    <div>
+                        <label for="car-type" style="color: white; display: block; margin-bottom: 5px; font-size: 14px;">Car Type</label>
+                        <select id="car-type" name="type" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                            <option value="sedan">Sedan</option>
+                            <option value="suv">SUV</option>
+                            <option value="luxury">Luxury / Sports</option>
+                            <option value="family">Family Van</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="pickup-date" style="color: white; display: block; margin-bottom: 5px; font-size: 14px;">Pickup Date</label>
+                        <input type="date" id="pickup-date" name="pickup" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                    </div>
+
+                    <div>
+                        <label for="return-date" style="color: white; display: block; margin-bottom: 5px; font-size: 14px;">Return Date</label>
+                        <input type="date" id="return-date" name="return" style="width: 100%; padding: 8px; border-radius: 4px; border: 1px solid #ccc;">
+                    </div>
+
+                    <button type="submit" style="background-color: #e74c3c; color: white; padding: 10px; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 5px;">Search</button>
+                
+                </form>
+            </div>
+            
+            <nav class="navbar" style="margin-top: 20px;">
                 <input type="checkbox" id="nav-toggle" class="nav-toggle">
                 
                 <label for="nav-toggle" class="nav-toggle-label">
@@ -34,17 +64,17 @@
 
     <main class="featured-cars">
         <!-- Sección Multimedia del Lab 9 -->
-        <section class="media-container" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center;">
+        <section class="media-container" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
             <div style="position: relative; width: 100%; max-width: 800px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
                 
-                <!-- Video principal que controla toda la multimedia -->
+                <!-- Video principal -->
                 <video id="promo-video" autoplay muted controls style="width: 100%; display: block;">
                     <source src="DrivingVideo.mp4" type="video/mp4">
                     <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
                     Your browser does not support the video tag.
                 </video>
 
-                <!-- Archivo de música oculto que se sincroniza automáticamente con los controles del video -->
+                <!-- Archivo de música sincronizado -->
                 <audio id="promo-audio" preload="auto">
                     <source src="DrivingMusic.mp4" type="audio/mp4">
                 </audio>
@@ -83,7 +113,7 @@
                     <source type="image/webp" srcset="car_4-480w.webp 480w" sizes="(max-width: 768px) 100vw, 768px">
                     <img src="car_4.jpg" alt="Car 4">
                 </picture>
-                <h3>Car Model Car 4</h3>
+                <h3>Car Model 4</h3>
                 <p>Volvo XC90. Comfy car for family.</p>
             </article>
             <article class="car-card">
@@ -117,22 +147,19 @@
         <p>&copy; 2026 Rental Cars. All rights reserved.</p>
     </footer>
 
-    <!-- Script para sincronizar perfectamente el video y la música a 10 segundos -->
+    <!-- Script de sincronización multimedia -->
     <script>
         const video = document.getElementById('promo-video');
         const audio = document.getElementById('promo-audio');
 
-        // Reproducir audio cuando el video empieza
         video.addEventListener('play', function() {
             audio.play();
         });
 
-        // Pausar audio cuando el video se pausa
         video.addEventListener('pause', function() {
             audio.pause();
         });
 
-        // Sincronizar bucle y corte de 10 segundos exactos
         video.addEventListener('timeupdate', function() {
             if (video.currentTime >= 10) {
                 video.currentTime = 0;
