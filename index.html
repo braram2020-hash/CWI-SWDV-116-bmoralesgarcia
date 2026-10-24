@@ -15,7 +15,7 @@
         <div class="hero-content" style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; height: 100%; min-height: 350px;">
             <h1><a href="index.html">Morale's Rental Cars</a></h1>
             
-            <!-- Formulario del Lab 10 con "Rent A Car Today" arriba -->
+            <!-- Formulario del Lab 10 -->
             <div style="background: rgba(0, 0, 0, 0.6); padding: 20px; border-radius: 8px; margin-top: 15px; width: 100%; max-width: 400px;">
                 <h3 style="color: white; margin-bottom: 15px;">Rent A Car Today</h3>
                 <form action="cars.html" method="GET" style="display: flex; flex-direction: column; gap: 12px; text-align: left;">
@@ -63,21 +63,15 @@
     </header>
 
     <main class="featured-cars">
-        <!-- Sección Multimedia del Lab 9 -->
+        <!-- Sección Multimedia estándar -->
         <section class="media-container" style="margin-bottom: 2rem; display: flex; flex-direction: column; align-items: center; margin-top: 30px;">
             <div style="position: relative; width: 100%; max-width: 800px; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.15);">
                 
-                <!-- Video principal -->
-                <video id="promo-video" autoplay muted controls style="width: 100%; display: block;">
+                <video autoplay muted loop controls style="width: 100%; display: block;">
                     <source src="DrivingVideo.mp4" type="video/mp4">
                     <track src="subtitles.vtt" kind="subtitles" srclang="en" label="English" default>
                     Your browser does not support the video tag.
                 </video>
-
-                <!-- Archivo de música sincronizado -->
-                <audio id="promo-audio" preload="auto">
-                    <source src="DrivingMusic.mp4" type="audio/mp4">
-                </audio>
 
             </div>
         </section>
@@ -146,29 +140,6 @@
     <footer>
         <p>&copy; 2026 Rental Cars. All rights reserved.</p>
     </footer>
-
-    <!-- Script de sincronización multimedia -->
-    <script>
-        const video = document.getElementById('promo-video');
-        const audio = document.getElementById('promo-audio');
-
-        video.addEventListener('play', function() {
-            audio.play();
-        });
-
-        video.addEventListener('pause', function() {
-            audio.pause();
-        });
-
-        video.addEventListener('timeupdate', function() {
-            if (video.currentTime >= 10) {
-                video.currentTime = 0;
-                audio.currentTime = 0;
-                video.play();
-                audio.play();
-            }
-        });
-    </script>
 
 </body>
 </html>
