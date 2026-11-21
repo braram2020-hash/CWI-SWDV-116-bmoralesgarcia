@@ -46,9 +46,42 @@
     </footer>
 
    
-    <script src="main.js"></script>
+<script src="main.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', listCars);
+        document.addEventListener('DOMContentLoaded', () => {
+            listCars();
+
+            const dialog = document.createElement('dialog');
+            dialog.id = 'rental-dialog';
+            dialog.innerHTML = `
+                <h3>Confirm Rental</h3>
+                <p id="rental-details"></p>
+                <div style="display: flex; gap: 10px; margin-top: 15px;">
+                    <button type="button" id="confirm-rental-btn">Confirm</button>
+                    <button type="button" id="cancel-rental-btn">Cancel</button>
+                </div>
+            `;
+            document.body.appendChild(dialog);
+
+            let currentRentalInfo = null;
+            const detailsEl = dialog.querySelector('#rental-details');
+            const confirmBtn = dialog.querySelector('#confirm-rental-btn');
+            const cancelBtn = dialog.querySelector('#cancel-rental-btn');
+
+            confirmBtn.addEventListener('click', () => {
+                console.log('Rental Confirmed:', currentRentalInfo);
+                dialog.close();
+            });
+
+            cancelBtn.addEventListener('click', () => {
+                dialog.close();
+            });
+
+            document.addEventListener('confirm-rental', (event) => {
+                currentRentalInfo = event.detail;
+                detailsEl.textContent = `Car Type: ${currentRentalInfo.carType} | Start Date: ${currentRentalInfo.startDate} | Return Date: ${currentRentalInfo.returnDate}`;
+                dialog.showModal();
+            });
+        });
     </script>
 </body>
-</html>

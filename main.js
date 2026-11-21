@@ -1,4 +1,4 @@
-
+// Array de 10 objetos de autos en el ámbito global
 const cars = [
     { type: "sedan", name: "Car Model 1", description: "Nice red Ford Fiesta.", year: 2022 },
     { type: "luxury", name: "Car Model 2", description: "Porsche 911. Dream car of all of us.", year: 2023 },
@@ -12,12 +12,11 @@ const cars = [
     { type: "sedan", name: "Car Model 10", description: "Toyota Camry. Reliable and efficient daily driver.", year: 2023 }
 ];
 
-
 function displayCars(carsArray) {
     const carGrid = document.querySelector('.car-grid');
     if (!carGrid) return;
 
-    carGrid.innerHTML = ''; 
+    carGrid.innerHTML = '';
 
     carsArray.forEach(car => {
         const article = document.createElement('article');
@@ -26,11 +25,31 @@ function displayCars(carsArray) {
             <h3>${car.name}</h3>
             <p><strong>Type:</strong> ${car.type} | <strong>Year:</strong> ${car.year}</p>
             <p>${car.description}</p>
+            <button type="button" class="rent-btn">Rent Car</button>
         `;
+
+        const rentBtn = article.querySelector('.rent-btn');
+        rentBtn.addEventListener('click', () => {
+            const startDateInput = document.querySelector('#start-date, input[name="start-date"], input[type="date"]');
+            const returnDateInput = document.querySelector('#return-date, input[name="return-date"]');
+
+            const rentalDetail = {
+                carType: car.type,
+                startDate: startDateInput && startDateInput.value ? startDateInput.value : '2026-11-22',
+                returnDate: returnDateInput && returnDateInput.value ? returnDateInput.value : '2026-11-25'
+            };
+
+            const confirmRentalEvent = new CustomEvent('confirm-rental', {
+                detail: rentalDetail,
+                bubbles: true
+            });
+
+            document.dispatchEvent(confirmRentalEvent);
+        });
+
         carGrid.appendChild(article);
     });
 }
-
 
 function listCars() {
     const params = new URLSearchParams(window.location.search);
